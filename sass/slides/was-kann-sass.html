@@ -1,0 +1,115 @@
+<section>
+	<h2>Was kann <span class="hl-sass">Sass?</span></h2>
+
+	<p class="fragment">Wie erleichtert <span class="hl-sass">Sass</span> unser leben?</p>
+</section>
+
+
+<section>
+	<h2>Variablen in <span class="hl-css">CSS</span> nutzen!</h2>
+	<p class="fragment">
+		<span class="hl-sass">Sass</span> Variablen werden definiert: <br>
+		<span class="fragment">$</span><span class="fragment">name</span><span class="fragment">:</span>
+		<span class="fragment"> wert</span><span class="fragment">;</span>
+	</p>
+
+
+</section>
+
+<section>
+	<h5>Variablen in <span class="hl-css">CSS</span> nutzen!</h5>
+<pre class="fragment"><code class="sass" data-trim>
+// Fonts
+$font-family-screen: Arial, Helvetica, sans-serif;
+$font-family-print: "Times New Roman", Times, serif;
+
+// Colors
+$gray: #ccc;
+$green: #33cc33;
+
+$primary-color: $gray;
+$secondary-color: $green;
+
+// Misc
+$margin: 0.2vw;</code></pre>
+
+<pre class="fragment"><code class="sass" data-trim>
+p {
+	font-family: $font-family-screen;
+	color: $gray;
+	margin-bottom: $margin;
+}
+</code></pre>
+	<small class="fragment">kompiliert zu</small>
+<pre class="fragment"><code class="css" data-trim>
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #ccc;
+	margin-bottom: 0.2vw;
+}
+
+</code></pre>
+</section>
+
+<!-- 
+<section>
+	<h2>Vorteile durch Variablen</h2>
+	<p class="fragment">Liegen auf der Hand, oder? ;-)</p>
+</section> -->
+
+
+<section>
+		<h2>Verschachtelung!</h2>
+		<p>
+<span class="fragment">element {
+	<span class="fragment">noch-ein-element {
+	<span class="fragment">...{}</span>
+	}</span>
+}</span>
+		</pre></p>
+</section>
+
+<section>
+	<h5 style="margin-top: -15%;">Verschachtelung!</h5>
+<pre><code class="sass" data-trim>
+.news-list-container {
+  margin: 0;
+  padding: 0;
+
+  .news-list-item {
+    border: 1px solid $gray;
+    padding: $padding;
+      
+      a {
+        color: $primary-color;
+        &:hover {
+            color: $secondary-color;
+            text-decoration: underline;
+        }
+      }
+    }
+}</code></pre>
+<small class="fragment">kompiliert zu</small>
+
+
+<pre><code class="css" data-trim>
+.news-list-container {
+	margin: 0;
+	padding: 0;
+}
+
+.news-list-container .news-list-item {
+	border: 1px solid #ccc;
+	padding: 0.5vw;
+}
+
+.news-list-container .news-list-item a {
+	color: #ccc;
+}
+
+.news-list-container .news-list-item a:hover {
+	color: #33cc33;
+	text-decoration: underline;
+}
+</code></pre>
+</section>

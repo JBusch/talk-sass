@@ -1,0 +1,187 @@
+<section>
+	<h2>Vererbung!</h2>
+	<p class="fragment">
+		@extend <span class="fragment">.klassen-name;</span>
+	</p>
+</section>
+
+
+<section>
+	<h3>Vererbung - @extend</h3>
+
+<pre class="fragment">
+<code data-trim class="sass">
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend .message;
+  border-color: green;
+}
+
+.error {
+  @extend .message;
+  border-color: red;
+}</code></pre>
+<small class="fragment">
+	kompiliert zu
+</small>
+</section>
+
+<section>
+	<h3>Vererbung - @extend</h3>
+	<small>kompiliert zu</small>
+<pre>
+<code data-trim class="css">
+.message, .success, .error {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}</code></pre>
+</section>
+
+<!-- <section>
+	<h3>Vererbung - @extend</h3>
+	<ul>
+		<li>Klassen müssen nur einmal def</li>
+	</ul>
+</section> -->
+
+<section>
+	<h2 class="red">Vorsicht!</h2>
+	<p class="fragment">@extend ist mit <span class="red">Vorsicht</span> zu genießen!</p>
+
+
+<pre class="fragment">
+<code data-trim class="sass">
+.important {
+  font-weight: bold;
+}
+ 
+.sidebar .important {
+  color: red;
+}
+ 
+.message {
+  @extend .important;
+}
+</code></pre>
+<small class="fragment">kompiliert zu</small>
+<pre class="fragment"><code data-trim class="css">
+.important, .message {
+  font-weight: bold;
+}
+ 
+.sidebar .important, .sidebar .message {
+  color: red;
+}</code></pre>
+</section>
+
+<section>
+<pre class="fragment">
+<code data-trim class="sass">
+.clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.module {
+  padding: 10px;
+  @extend .clearfix;
+  h3 {
+    color: red;
+    @extend .clearfix;
+    span {
+      float: right; 
+    }
+  }
+}
+
+.sports {
+  @extend .module;
+}
+
+.news {
+  @extend .module; 
+}</code></pre>
+<small class="fragment">kompiliert zu</small>
+</section>
+
+<section><pre >
+<code data-trim class="css">
+.clearfix:before,
+.module:before,
+.sports:before,
+.news:before,
+.module h3:before,
+.sports h3:before,
+.news h3:before,
+.clearfix:after,
+.module:after,
+.sports:after,
+.news:after,
+.module h3:after,
+.sports h3:after,
+.news h3:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after,
+.module:after,
+.sports:after,
+.news:after,
+.module h3:after,
+.sports h3:after,
+.news h3:after {
+  clear: both;
+}
+
+.module, .sports, .news {
+  padding: 10px;
+}
+.module h3, .sports h3, .news h3 {
+  color: red;
+}
+.module h3 span, .sports h3 span, .news h3 span {
+  float: right;
+}</code></pre>
+
+</section>
+
+
+<section>
+	<p>
+	@extend funktioniert nicht mit verschachtelten Selektoren
+	</p>
+<pre>
+<code data-trim class="sass">
+	.header {
+  h3 {
+    color: red; 
+  }
+}
+
+.special-header {
+  /* Funktioniert nicht */
+  @extend .header h3;
+}
+</code></pre>
+<p class="fragment">Mixins for the Rescue!</p>
+</section>

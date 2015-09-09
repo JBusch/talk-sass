@@ -1,0 +1,62 @@
+<section>
+<h2>Mixins!</h2>
+<p>
+<span class="fragment">@mixin</span> 
+<span class="fragment">name</span> 
+<span class="fragment">($variable, ...)</span> 
+<span class="fragment">{eigenschaften}</span>
+<span class="fragment"></span>
+</p>
+<p class="fragment">
+<span class="fragment">@include</span> 
+<span class="fragment">name</span> 
+<span class="fragment">($variable, ...)</span> 
+</p>
+</section>
+
+<section>
+<h5>Mixins!</h5>
+<pre class="fragment">
+<code data-trim class="sass">
+mixin sexy-border($color, $width) {
+  border: {
+    color: $color;
+    width: $width;
+    style: dashed;
+  }
+}
+</code></pre>
+<pre class="fragment">
+<code data-trim class="sass">
+p { @include sexy-border(blue, 1px); }
+</code></pre>
+<small class="fragment">kompiliert zu</small>
+<pre class="fragment">
+<code data-trim class="css">
+p {
+  border-color: blue;
+  border-width: 1px;
+  border-style: dashed;
+}
+</code></pre>
+</section>
+
+
+<section>
+	<h5>Mixins!</h5>
+	<p>Beispiel: Foundation Grid</p>
+<pre class="fragment">
+<code data-trim class="sass">
+.news-list-container {
+  @include grid-row();
+
+  .news-list-item {
+    @include grid-column(12);
+
+    @media #{$medium-only} { 
+      @include grid-column(6);
+    }
+    
+  }
+}</code></pre>
+</section>

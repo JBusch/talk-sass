@@ -1,0 +1,36 @@
+<section>
+
+<h2>Aufbau eines Sass Projekts</h2>
+
+	<p class="fragment">In kompilierungstool X werden <span class="hl-sass">Sass</span> und <span class="hl-css">CSS</span> Verzeichnis angegeben
+	<br><small class="fragment">(wir nennen das Verzeichnis nach Konvention Scss)</small>
+	</p>
+	<p class="fragment">
+<pre class="fragment">
+<code data-trim class="sass">
+_type.scss
+_grid.scss
+_variables.scss
+app.scss</code></pre>
+</p>
+<p class="fragment">Alle Dateien ohne "_" vor dem Dateinamen im Scss Verzeichnis werden duch den Watchtask kompiliert</p>
+
+</section>
+
+<section>
+
+<h5>Aufbau eines Sass Projekts</h5>
+
+	<p class="fragment">Um Dateien mit "_" zu kompilieren, müssen sie importiert werden</p>
+	<p class="fragment">In unsere app.scss würden wir also folgendes schreiben:</p>
+<pre class="fragment">
+<code data-trim class="sass">
+@import 'type';
+@import 'grid';
+@import 'variables';
+</code></pre>
+</p>
+<p class="fragment">der "_" und die Dateiendung werden weggelassen.</p>
+<p class="fragment">Auf die Reihenfolge achten! Kompiliert wird von oben nach unten.</p>
+
+</section>

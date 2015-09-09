@@ -1,0 +1,72 @@
+<section>
+<h3>Was ist Sass? / Begriffsfindung</h3>
+</section>
+
+<section>
+	<p>In <span class="hl-ruby">Ruby</span> geschrieben und compiliert via <span class="hl-ruby">Ruby</span></p>
+	<p class="fragment">
+		<a href="http://libsass.org/">
+		LibSass</a> ist ein <span class="hl-sass">Sass</span> Port in C/C++ <br>
+		<small>(Momentan kein <span class="hl-compass">compass</span> Support)</small>
+	</p>
+</section>
+
+<section>
+	<p>Es gibt zwei verschiedenen <span class="hl-sass">Sass</span> Syntaxen</p>
+	<div><span class="fragment">Sass</span>
+<pre class="fragment">
+<code data-trim class="sass">
+#main
+  color: blue
+  font-size: 0.3em
+
+  a
+    font:
+      weight: bold
+      family: serif
+    &:hover
+      background-color: #eee
+</code></pre>
+</div>
+
+
+
+<div>
+	<span class="fragment">und SCSS</span>
+<pre class="fragment"><code data-trim class="sass">
+#main {
+  color: blue;
+  font-size: 0.3em;
+
+  a {
+    font: {
+      weight: bold;
+      family: serif;
+    }
+    &:hover {
+      background-color: #eee;
+    }
+  }
+}
+</code></pre>
+</div>
+
+</section>
+
+<section>
+	<h3>Installation</h3>
+	<pre class="fragment"><code data-trim>gem install ruby</code></pre>
+	<pre class="fragment"><code data-trim>gem install sass</code></pre>
+</section>
+
+<section>
+	<h3>CMD Befehle</h3>
+	<pre class="fragment"><code data-trim>sass --watch</code></pre>
+	<pre class="fragment"><code data-trim>sass --watch input.sass:output.css
+sass --watch input-dir:output-dir</code></pre>
+	<p class="fragment"><i>Umständlich?</i></p>
+	<p class="fragment">Ja, aber das geht auch einfacher!</p>
+</section>
+
+
+

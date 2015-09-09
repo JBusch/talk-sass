@@ -1,0 +1,45 @@
+<section>
+	<h2>Mathematische Operationen!</h2>
+
+	<p>
+		<span class="fragment">+</span>
+		<span class="fragment">-</span>
+		<span class="fragment">*</span>
+		<span class="fragment">/</span>
+		<span class="fragment">%</span>
+	</p>
+</section>
+
+<section>
+	<h5>Mathematische Operationen!</h5>
+<pre class="fragment">
+<code data-trim class="sass">
+.container { width: 100%; }
+
+article[role="main"] {
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+aside[role="complimentary"] {
+  float: right;
+  width: 300px / 960px * 100%;
+}</code></pre>
+<small class="fragment">kompiliert zu</small>
+<pre class="fragment">
+<code data-trim class="sass">
+.container {
+  width: 100%;
+}
+
+article[role="main"] {
+  float: left;
+  width: 62.5%;
+}
+
+aside[role="complimentary"] {
+  float: right;
+  width: 31.25%;
+}
+</code></pre>
+</section>

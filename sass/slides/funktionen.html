@@ -1,0 +1,26 @@
+<h2>Funktionen!</h2>
+<pre class="fragment">
+<code data-trim class="sass">
+lighten($color, $amount);
+darken($color, $amount);
+</code></pre>
+
+<pre class="fragment">
+<code data-trim class="sass">
+$green: #33cc33;
+$amount: 25%;
+p {
+	border-color: lighten(#CCC, 10%);
+	border-color: darken($green, $amount);
+}</code></pre>
+
+<small class="fragment">kompiliert zu</small>
+
+<pre class="fragment">
+<code data-trim class="css">
+p {
+  border-color: #e6e6e6;
+  border-color: #196619;
+}</code></pre>
+
+
